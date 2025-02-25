@@ -1,3 +1,7 @@
+"""
+Given an array of integers, write a function that sorts the array using the Bubble Sort algorithm. While sorting, count the total number of adjacent swaps made and return this count.
+
+"""
 swaps=0
 n=int(input())
 arr=list(map(int,input().split()))
