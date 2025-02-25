@@ -1,3 +1,5 @@
+"""In an array, an inversion occurs when two elements arr[i] and arr[j] are such that arr[i] > arr[j] and i < j. Given an array of integers, find the number of inversions.
+"""
 def inversion(n,arr):
     count=0
     for i in range(n):
