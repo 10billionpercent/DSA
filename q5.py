@@ -1,3 +1,7 @@
+"""
+Given an array of size N-1 such that it only contains distinct integers in the range of 1 to N.Find the missing element.
+
+"""
 def missing(n,arr):
     test=[i for i in range(1,n+1)]
     for i in test:
