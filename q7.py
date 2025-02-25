@@ -1,3 +1,8 @@
+"""You are given a n x m sparse matrix A with the majority of its elements being zero. Your task is to find the k-th smallest non-zero element in this matrix.
+
+The matrix is represented as a list of non-zero elements along with their positions, i.e., A[i][j] = val for each non-zero element. If k is greater than the number of non-zero elements, return -1.
+
+"""
 def ksmallest(nmk,arr):
     nonzero=[]
     for i in arr:
