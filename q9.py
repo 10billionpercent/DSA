@@ -1,3 +1,6 @@
+"""
+Consider a linear queue used in a print server that manages multiple print jobs. Due to heavy load, the queue frequently overflows. Propose and implement a solution using a linear queue that minimizes the overflow while ensuring fair scheduling of print jobs.
+"""
 n=int(input())
 q=[]
 for i in range(n):
