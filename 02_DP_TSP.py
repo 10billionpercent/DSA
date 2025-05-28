@@ -1,11 +1,20 @@
-n=int(input())
-d=[list(map(int,input().split()))for _ in range(n)]
-dp=[[1e9]*n for _ in range(1<<n)]
-dp[1][0]=0
-for mask in range(1<<n):
- for u in range(n):
-  if mask&(1<<u):
-   for v in range(n):
-    if mask&(1<<v)==0:
-     dp[mask|(1<<v)][v]=min(dp[mask|(1<<v)][v],dp[mask][u]+d[u][v])
-print(min(dp[-1][i]+d[i][0]for i in range(n)))
+def tsp_dp(dist):
+    n = len(dist)
+    dp = [[float('inf')] * n for _ in range(1 << n)]
+    dp[1][0] = 0
+    for mask in range(1 << n):
+        for u in range(n):
+            if mask & (1 << u):
+                for v in range(n):
+                    if not mask & (1 << v):
+                        dp[mask | (1 << v)][v] = min(dp[mask | (1 << v)][v], dp[mask][u] + dist[u][v])
+    return min(dp[-1][i] + dist[i][0] for i in range(1, n))
+
+dist = [
+    [0, 10, 15, 20],
+    [10, 0, 35, 25],
+    [15, 35, 0, 30],
+    [20, 25, 30, 0]
+]
+
+print("TSP with DP:", tsp_dp(dist))
