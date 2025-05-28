@@ -1,22 +1,33 @@
-from heapq import*
-n,W=map(int,input().split())
-w=list(map(int,input().split()))
-p=list(map(int,input().split()))
-idx=sorted(range(n),key=lambda i:-p[i]/w[i])
-def bound(i,cw,cp):
- b=cp
- while i<n and cw<w[idx[i]]:
-  cw+=w[idx[i]]
-  cp+=p[idx[i]]
-  i+=1
- if i<n:b=cp+(W-cw)*p[idx[i]]/w[idx[i]]
- return b
-q=[(-bound(0,0,0),0,0,0)]
-res=0
-while q:
- _,i,cw,cp=heappop(q)
- if i==n:res=max(res,cp);continue
- if cw+w[idx[i]]<=W:
-  heappush(q,(-bound(i+1,cw+w[idx[i]],cp+p[idx[i]]),i+1,cw+w[idx[i]],cp+p[idx[i]]))
- heappush(q,(-bound(i+1,cw,cp),i+1,cw,cp))
-print(res)
+def knapsack_bb(w, v, W):
+    n = len(w)
+    ans = [0]
+
+    def bound(i, cap, p):
+        b = p
+        while i < n and w[i] <= cap:
+            b += v[i]
+            cap -= w[i]
+            i += 1
+        if i < n:
+            b += v[i] * cap / w[i]
+        return b
+
+    def dfs(i, cap, p):
+        if i == n:
+            ans[0] = max(ans[0], p)
+            return
+        if w[i] <= cap:
+            dfs(i + 1, cap - w[i], p + v[i])
+        if bound(i + 1, cap, p) > ans[0]:
+            dfs(i + 1, cap, p)
+
+    items = sorted(zip(v, w), key=lambda x: x[0] / x[1], reverse=True)
+    v, w = zip(*items)
+    dfs(0, W, 0)
+    return ans[0]
+
+w = [10, 20, 30]
+v = [60, 100, 120]
+W = 50
+
+print("Knapsack BnB:", knapsack_bb(w, v, W))
