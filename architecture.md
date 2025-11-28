@@ -2,35 +2,35 @@
 flowchart LR
 
     %% ===== CLIENT LAYER ===== %%
-    subgraph CLIENT ["Client (React Frontend)"]
+    subgraph CLIENT ["Client React Frontend"]
         C1[Login Page]
         C2[Dashboard]
         C3[Document Upload]
-        C4[Document List & Search]
+        C4[Document List and Search]
         C5[PDF Viewer]
     end
 
     %% ===== BACKEND LAYER ===== %%
-    subgraph BACKEND ["Backend (Node.js + Express)"]
-        B1[Auth Module (JWT + bcrypt)]
+    subgraph BACKEND ["Backend NodeJS and Express"]
+        B1[Auth Module JWT and bcrypt]
         B2[Document Upload API]
-        B3[Document View/Download API]
-        B4[Search & Metadata Handler]
-        B5[Multer (File Handler)]
-        B6[GridFSBucket Connector]
+        B3[Document View and Download API]
+        B4[Search and Metadata Handler]
+        B5[Multer File Handler]
+        B6[GridFS Bucket Connector]
     end
 
     %% ===== DATABASE LAYER ===== %%
-    subgraph DATABASE ["Database (MongoDB + GridFS)"]
+    subgraph DATABASE ["Database MongoDB and GridFS"]
         D1[User Collection]
         D2[Document Metadata Collection]
-        D3[GridFS: fs.files]
-        D4[GridFS: fs.chunks]
+        D3[GridFS Files]
+        D4[GridFS Chunks]
     end
 
     %% === FLOWS === %%
     CLIENT -->|HTTP Requests| BACKEND
-    BACKEND -->|Validate JWT| B1
+    BACKEND -->|Validate Token| B1
 
     C3 -->|Upload File| B2 --> B5 -->|File Upload Stream| B6 --> D3
     D3 --> D4
@@ -42,4 +42,3 @@ flowchart LR
 
     C1 -->|Credentials| B1 -->|Fetch User| D1
 ```
-
