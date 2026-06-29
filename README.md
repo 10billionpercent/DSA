@@ -57,6 +57,7 @@
 | [0004-median-of-two-sorted-arrays](https://github.com/10billionpercent/DSA/tree/master/0004-median-of-two-sorted-arrays) |
 | [0035-search-insert-position](https://github.com/10billionpercent/DSA/tree/master/0035-search-insert-position) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/10billionpercent/DSA/tree/master/0167-two-sum-ii-input-array-is-sorted) |
+| [0278-first-bad-version](https://github.com/10billionpercent/DSA/tree/master/0278-first-bad-version) |
 ## Linked List
 |  |
 | ------- |
@@ -73,4 +74,8 @@
 |  |
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/10billionpercent/DSA/tree/master/0004-median-of-two-sorted-arrays) |
+## Interactive
+|  |
+| ------- |
+| [0278-first-bad-version](https://github.com/10billionpercent/DSA/tree/master/0278-first-bad-version) |
 <!---LeetCode Topics End-->
