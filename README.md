@@ -31,6 +31,7 @@
 | [0026-remove-duplicates-from-sorted-array](https://github.com/10billionpercent/DSA/tree/master/0026-remove-duplicates-from-sorted-array) |
 | [0027-remove-element](https://github.com/10billionpercent/DSA/tree/master/0027-remove-element) |
 | [0035-search-insert-position](https://github.com/10billionpercent/DSA/tree/master/0035-search-insert-position) |
+| [0053-maximum-subarray](https://github.com/10billionpercent/DSA/tree/master/0053-maximum-subarray) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/10billionpercent/DSA/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 ## Trie
 |  |
@@ -74,8 +75,13 @@
 |  |
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/10billionpercent/DSA/tree/master/0004-median-of-two-sorted-arrays) |
+| [0053-maximum-subarray](https://github.com/10billionpercent/DSA/tree/master/0053-maximum-subarray) |
 ## Interactive
 |  |
 | ------- |
 | [0278-first-bad-version](https://github.com/10billionpercent/DSA/tree/master/0278-first-bad-version) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0053-maximum-subarray](https://github.com/10billionpercent/DSA/tree/master/0053-maximum-subarray) |
 <!---LeetCode Topics End-->
